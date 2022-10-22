@@ -13,10 +13,11 @@ export interface IGenre {
 
 export interface IGenreEditInput extends Omit<IGenre, '_id'> {}
 
-interface IActor {
+export interface IActor {
 	_id: string;
 	photo: string;
 	countryMovies: number;
+	name: string;
 	slug: string;
 }
 

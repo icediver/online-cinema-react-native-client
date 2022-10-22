@@ -28,6 +28,7 @@ const ReanimatedPressable = Animated.createAnimatedComponent(Pressable);
 interface IMovieItem {
 	index: number;
 	style?: ViewStyle;
+	className?: string;
 	movie: IMovie;
 }
 
