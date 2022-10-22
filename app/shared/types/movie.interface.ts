@@ -11,6 +11,8 @@ export interface IGenre {
 	description: string;
 }
 
+export interface IGenreEditInput extends Omit<IGenre, '_id'> {}
+
 interface IActor {
 	_id: string;
 	photo: string;

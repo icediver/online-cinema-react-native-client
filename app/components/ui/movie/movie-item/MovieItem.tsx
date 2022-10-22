@@ -1,7 +1,14 @@
 import cn from 'clsx';
 import { BlurView } from 'expo-blur';
 import { FC } from 'react';
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import {
+	Image,
+	Pressable,
+	StyleSheet,
+	Text,
+	View,
+	ViewStyle
+} from 'react-native';
 import Animated from 'react-native-reanimated';
 
 import { useMovieItemAnimation } from '@/components/ui/movie/movie-item/useMovieItemAnimation';
@@ -20,23 +27,23 @@ const ReanimatedPressable = Animated.createAnimatedComponent(Pressable);
 
 interface IMovieItem {
 	index: number;
-	className?: string;
+	style?: ViewStyle;
 	movie: IMovie;
 }
 
-const MovieItem: FC<IMovieItem> = ({ index, movie, className }) => {
+const MovieItem: FC<IMovieItem> = ({ index, movie, style }) => {
 	const { navigate } = useTypedNavigation();
 	const { name } = useTypedRoute();
 
 	const isFavoritePage = name === 'Favorites';
 
-	const { styleAnimation } = useMovieItemAnimation(index);
+	const { styleAnimation } = useMovieItemAnimation(index, style);
 
 	return (
 		<ReanimatedPressable
 			style={styleAnimation}
 			onPress={() => navigate('Movie', { slug: movie.slug })}
-			className={cn('rounded-xl overflow-hidden h-56 w-40', className)}
+			className={'rounded-xl overflow-hidden h-56 w-40'}
 		>
 			{isFavoritePage && (
 				<View className={'absolute z-1 right-1.5 top-1.5'}>
@@ -50,14 +57,16 @@ const MovieItem: FC<IMovieItem> = ({ index, movie, className }) => {
 			<BlurView
 				intensity={25}
 				className={cn(
-					'absolute w-full bottom-0 left-0 right-0 items-center pt-0.5 px-2',
-					className
+					'absolute w-full bottom-0 left-0 right-0 items-center pt-0.5 px-2'
 				)}
 			>
 				<View className={'-ml-2 -mb-0.5'}>
 					<Rating rating={movie.rating} size={16} />
 				</View>
-				<Text className={'text-white text-lg font-semibold mb-1'}>
+				<Text
+					className={'text-white text-lg font-semibold mb-1'}
+					numberOfLines={1}
+				>
 					{movie.title}
 				</Text>
 			</BlurView>

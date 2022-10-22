@@ -1,5 +1,4 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import cn from 'clsx';
 import { FC } from 'react';
 import { StyleSheet } from 'react-native';
 import Animated, { withSpring } from 'react-native-reanimated';
@@ -18,7 +17,7 @@ const FavoriteButton: FC<IFavoriteButton> = ({ isSmall, movieId }) => {
 	const { outlineStyle, fillStyle, liked } = useFavoriteAnimation(isSmashed);
 	return (
 		<BlurButton
-			className={cn({ 'w-8 h-8 rounded-lg': isSmall })}
+			isSmall={isSmall}
 			onPress={() => {
 				liked.value = withSpring(liked.value === 1 ? 0 : 1);
 				toggleFavorite();

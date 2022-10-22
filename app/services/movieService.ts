@@ -36,11 +36,11 @@ export const MovieService = {
 			method: 'GET'
 		});
 	},
-	async getByGenres(genresIds: string) {
-		return request<IMovie>({
+	async getByGenres(genreIds: string[]) {
+		return request<IMovie[]>({
 			url: getMoviesUrl(`/by-genres`),
 			method: 'POST',
-			data: { genresIds }
+			data: { genreIds }
 		});
 	},
 
