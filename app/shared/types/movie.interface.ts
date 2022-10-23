@@ -1,24 +1,10 @@
+import { IActor } from '@/shared/types/actor.interface';
+import { IGenre } from '@/shared/types/genre.interface';
+
 export interface IParamerers {
 	year: number;
 	duration: number;
 	country: string;
-}
-
-export interface IGenre {
-	_id: string;
-	name: string;
-	slug: string;
-	description: string;
-}
-
-export interface IGenreEditInput extends Omit<IGenre, '_id'> {}
-
-export interface IActor {
-	_id: string;
-	photo: string;
-	countryMovies: number;
-	name: string;
-	slug: string;
 }
 
 export interface IMovie {

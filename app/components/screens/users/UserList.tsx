@@ -2,12 +2,12 @@ import { FC } from 'react';
 
 import { AdminNavigation, Layout } from '@/components/ui';
 
-const Admin: FC = () => {
+const UserList: FC = () => {
 	return (
 		<Layout isHasPadding>
-			<AdminNavigation title={'Statistics'} />
+			<AdminNavigation title={'UserList'} />
 		</Layout>
 	);
 };
 
-export default Admin;
+export default UserList;
