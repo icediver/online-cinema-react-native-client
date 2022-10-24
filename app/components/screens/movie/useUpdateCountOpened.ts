@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import { useTypedRoute } from '@/hooks/useTypedRoute';
 
-import { MovieService } from '@/services/movieService';
+import { MovieService } from '@/services/movie.service';
 
 export const useUpdateCountOpened = () => {
 	const { params } = useTypedRoute<'Movie'>();

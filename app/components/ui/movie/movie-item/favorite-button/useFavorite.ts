@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { useFavorites } from '@/components/screens/favorites/useFavorites';
 
-import { UserService } from '@/services/userService';
+import { UserService } from '@/services/user.service';
 
 export const useFavorite = (movieId: string) => {
 	const [isSmashed, setIsSmashed] = useState(false);

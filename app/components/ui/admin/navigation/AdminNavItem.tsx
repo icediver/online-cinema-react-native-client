@@ -3,7 +3,7 @@ import cn from 'clsx';
 import { FC } from 'react';
 import { Pressable, Text } from 'react-native';
 
-import { INavItem } from '@/components/ui/admin-navigation/admin-navigation.interface';
+import { INavItem } from '@/components/ui/admin/navigation/admin-navigation.interface';
 
 import { useTypedNavigation } from '@/hooks/useTypedNavigation';
 import { useTypedRoute } from '@/hooks/useTypedRoute';

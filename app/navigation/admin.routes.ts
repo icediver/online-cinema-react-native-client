@@ -1,12 +1,12 @@
-import ActorList from '@/components/screens/actors/ActorList';
 import ActorEdit from '@/components/screens/admin/actor/ActorEdit';
+import ActorList from '@/components/screens/admin/actors/ActorList';
 import GenreEdit from '@/components/screens/admin/genre/GenreEdit';
+import GenreList from '@/components/screens/admin/genres/GenreList';
 import Admin from '@/components/screens/admin/home/Admin';
 import MovieEdit from '@/components/screens/admin/movie/MovieEdit';
+import MovieList from '@/components/screens/admin/movies/MovieList';
 import UserEdit from '@/components/screens/admin/user/UserEdit';
-import GenreList from '@/components/screens/genres/GenreList';
-import MovieList from '@/components/screens/movies/MovieList';
-import UserList from '@/components/screens/users/UserList';
+import UserList from '@/components/screens/admin/users/UserList';
 
 import { IRoute } from '@/navigation/navigation.types';
 

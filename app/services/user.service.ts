@@ -1,6 +1,6 @@
 import { IAuthFormData } from '@/shared/types/auth.interface';
 import { IMovie } from '@/shared/types/movie.interface';
-import { IUser } from '@/shared/types/user.interface';
+import { IUser, IUserEditInput } from '@/shared/types/user.interface';
 
 import { request } from '@/services/api/request.api';
 
@@ -54,7 +54,7 @@ export const UserService = {
 		});
 	},
 
-	async update(data: IAuthFormData, _id: string) {
+	async update(_id: string, data: IUserEditInput) {
 		return request<IUser>({
 			url: getUserUrl(`/${_id}`),
 			method: 'PUT',

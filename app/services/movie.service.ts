@@ -43,6 +43,12 @@ export const MovieService = {
 			data: { genreIds }
 		});
 	},
+	async getById(_id: string) {
+		return request<IMovieEditInput>({
+			url: getMoviesUrl(`/${_id}`),
+			method: 'GET'
+		});
+	},
 
 	async create() {
 		return request<string>({
@@ -51,7 +57,7 @@ export const MovieService = {
 		});
 	},
 
-	async update(data: IMovieEditInput, _id: string) {
+	async update(_id: string, data: IMovieEditInput) {
 		return request<string>({
 			url: getMoviesUrl(`/${_id}`),
 			method: 'PUT',

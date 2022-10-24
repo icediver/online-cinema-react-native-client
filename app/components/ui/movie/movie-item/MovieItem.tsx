@@ -44,7 +44,7 @@ const MovieItem: FC<IMovieItem> = ({ index, movie, style }) => {
 		<ReanimatedPressable
 			style={styleAnimation}
 			onPress={() => navigate('Movie', { slug: movie.slug })}
-			className={'rounded-xl overflow-hidden h-56 w-40'}
+			className={'rounded-xl overflow-hidden h-56'}
 		>
 			{isFavoritePage && (
 				<View className={'absolute z-1 right-1.5 top-1.5'}>

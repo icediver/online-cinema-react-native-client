@@ -4,7 +4,7 @@ import Toast from 'react-native-toast-message';
 
 import { IAuthFormData } from '@/shared/types/auth.interface';
 
-import { UserService } from '@/services/userService';
+import { UserService } from '@/services/user.service';
 
 export const useProfile = (setValue: UseFormSetValue<IAuthFormData>) => {
 	const { isLoading } = useQuery(['profile'], () => UserService.getProfile(), {

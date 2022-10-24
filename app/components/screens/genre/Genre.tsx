@@ -16,9 +16,7 @@ const Genre: FC = () => {
 				<MovieCatalog
 					title={genre.name}
 					movies={movies}
-					description={
-						'Genre movies in excelent quality: legal, safe, without ads'
-					}
+					description={genre.description}
 					isBackButton
 				/>
 			) : (

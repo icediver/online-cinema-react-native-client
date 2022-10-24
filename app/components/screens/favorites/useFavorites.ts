@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import { useAuth } from '@/hooks/useAuth';
 
-import { UserService } from '@/services/userService';
+import { UserService } from '@/services/user.service';
 
 export const useFavorites = () => {
 	const { user } = useAuth();

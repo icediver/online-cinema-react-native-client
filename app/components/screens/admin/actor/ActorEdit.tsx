@@ -1,12 +1,81 @@
-import {FC} from 'react';
-import {Text, View} from 'react-native';
+import { FC } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { ScrollView, View } from 'react-native';
+
+import { useActorEdit } from '@/components/screens/admin/actor/useActorEdit';
+import { Button, Field, Layout, Loader } from '@/components/ui';
+import AdminNavigation from '@/components/ui/admin/navigation/AdminNavigation';
+import SlugWrapper from '@/components/ui/form-elements/field/SlugWrapper';
+import UploadField from '@/components/ui/form-elements/upload-field/UploadField';
+
+import { IActorEditInput } from '@/shared/types/actor.interface';
+
+import { generateSlug } from '@/utils/generateSlug';
 
 const ActorEdit: FC = () => {
+	const { control, setValue, handleSubmit, getValues } =
+		useForm<IActorEditInput>({ mode: 'onChange' });
+	const { isLoading, onSubmit } = useActorEdit(setValue);
 	return (
-		<View>
-			<Text>ActorEdit</Text>
-		</View>
-	)
+		<Layout isHasPadding>
+			<AdminNavigation title={'Edit Actor'} isBackButton />
+			<View>
+				{isLoading ? (
+					<Loader />
+				) : (
+					<>
+						<ScrollView showsVerticalScrollIndicator={false}>
+							<Field<IActorEditInput>
+								control={control}
+								name={'name'}
+								placeholder={'Enter name'}
+								rules={{
+									required: 'Name is required'
+								}}
+							/>
+							<SlugWrapper
+								generate={() => {
+									setValue('slug', generateSlug(getValues('name')));
+								}}
+							>
+								<Field<IActorEditInput>
+									control={control}
+									name={'slug'}
+									placeholder={'Enter slug'}
+									rules={{
+										required: 'Name is required'
+									}}
+								/>
+							</SlugWrapper>
+							<Controller
+								control={control}
+								name={'photo'}
+								defaultValue={''}
+								render={({
+									field: { value, onChange },
+									fieldState: { error }
+								}) => (
+									<UploadField
+										onChange={onChange}
+										value={value}
+										error={error}
+										folder={'actors'}
+										placeholder={'Photo'}
+									/>
+								)}
+								rules={{
+									required: 'Photo is required'
+								}}
+							/>
+							<Button onPress={handleSubmit(onSubmit)} icon={'pen-tool'}>
+								Update
+							</Button>
+						</ScrollView>
+					</>
+				)}
+			</View>
+		</Layout>
+	);
 };
 
 export default ActorEdit;

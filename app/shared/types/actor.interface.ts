@@ -1,7 +1,7 @@
 export interface IActor {
 	_id: string;
 	photo: string;
-	countryMovies: number;
+	countMovies: number;
 	name: string;
 	slug: string;
 }

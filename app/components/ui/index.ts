@@ -1,6 +1,6 @@
 export { default as Loader } from './Loader';
 export { default as Layout } from './layout/Layout';
-export { default as AdminNavigation } from './admin-navigation/AdminNavigation';
+// export { default as AdminNavigation } from './navigation/AdminNavigation';
 export { default as Button } from './button/Button';
 export { default as Heading } from './heading/Heading';
 export { default as Field } from './form-elements/field/Field';
@@ -12,3 +12,5 @@ export { default as FavoriteButton } from './movie/movie-item/favorite-button/Fa
 export { default as BlurButton } from './blur-button/BlurButton';
 export { default as MovieItem } from './movie/movie-item/MovieItem';
 export { default as MovieCatalog } from './movie/catalog/MovieCatalog';
+export { default as AdminTable } from './admin/table/AdminTable';
+export { default as AdminTableHeader } from './admin/table-header/AdminHeader';

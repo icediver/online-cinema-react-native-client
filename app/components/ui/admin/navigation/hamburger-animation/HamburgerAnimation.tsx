@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Animated from 'react-native-reanimated';
 
-import { useHamgurgerAnimation } from '@/components/ui/admin-navigation/hamburger-animation/useHamgurgerAnimation';
+import { useHamgurgerAnimation } from '@/components/ui/admin/navigation/hamburger-animation/useHamgurgerAnimation';
 
 const className = 'w-6 h-0.5 bg-[#ecf0f1]';
 

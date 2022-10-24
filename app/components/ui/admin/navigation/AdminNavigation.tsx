@@ -8,11 +8,12 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import { BlurButton, Heading } from '@/components/ui';
-import AdminNavItem from '@/components/ui/admin-navigation/AdminNavItem';
-import { navItems } from '@/components/ui/admin-navigation/admin-navigation.data';
-import HamburgerAnimation from '@/components/ui/admin-navigation/hamburger-animation/HamburgerAnimation';
 
 import { useTypedNavigation } from '@/hooks/useTypedNavigation';
+
+import AdminNavItem from './AdminNavItem';
+import { navItems } from './admin-navigation.data';
+import HamburgerAnimation from './hamburger-animation/HamburgerAnimation';
 
 interface IAdminNavigation {
 	title: string;
@@ -48,7 +49,8 @@ const AdminNavigation: FC<IAdminNavigation> = ({ isBackButton, title }) => {
 					<BlurButton
 						icon={'chevron-left'}
 						iconSize={24}
-						className={'w-12 h-12 mr-3'}
+						// className={'w-12 h-12 mr-3'}
+						style={{ marginRight: 12 }}
 						onPress={goBack}
 					/>
 				)}

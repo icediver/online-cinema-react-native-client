@@ -14,7 +14,7 @@ export interface IMovie {
 	parameters: IParamerers;
 	genres: IGenre[];
 	actors: IActor[];
-	countryOpened: number;
+	countOpened: number;
 	videoUrl: string;
 	rating: number;
 	slug: string;
