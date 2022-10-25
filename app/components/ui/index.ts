@@ -14,3 +14,4 @@ export { default as MovieItem } from './movie/movie-item/MovieItem';
 export { default as MovieCatalog } from './movie/catalog/MovieCatalog';
 export { default as AdminTable } from './admin/table/AdminTable';
 export { default as AdminTableHeader } from './admin/table-header/AdminHeader';
+export { default as DropDown } from './form-elements/drop-down/Dropdown';
